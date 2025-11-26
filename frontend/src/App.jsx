@@ -3,6 +3,7 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import CodeStats from './pages/CodeStats';
 import Health from './pages/Health';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function App() {
   return (
@@ -55,6 +56,7 @@ export default function App() {
           <Route path="/health" element={<Health />} />
         </Routes>
       </main>
+      <Analytics/>
     </div>
   );
 }
