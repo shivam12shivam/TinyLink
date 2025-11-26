@@ -3,6 +3,24 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+
+const allowedOrigins = [
+  'http://localhost:5173',                          // dev
+  'https://tiny-link-sable.vercel.app',          // your Vercel URL (change to real one)
+  'https://your-custom-domain.com'                 // if you have a custom domain
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      // allow no-origin (Postman, curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error('Not allowed by CORS'), false);
+    }
+  })
+);
+
 const mongoose = require('mongoose'); // add this line
 const startTime = Date.now();         // add this line
 
