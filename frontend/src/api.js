@@ -1,4 +1,4 @@
-// src/api.js
+
 import axios from "axios";
 
 // Backend URL
@@ -6,7 +6,7 @@ const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE || "http://localhost:4000",
 });
 
-// just export simple functions
+
 export function listLinks() {
   return api.get("/api/links");
 }

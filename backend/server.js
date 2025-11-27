@@ -5,9 +5,9 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const allowedOrigins = [
-  'http://localhost:5173',                          // dev
-  'https://tiny-link-sable.vercel.app',          // your Vercel URL (change to real one)
-  'https://your-custom-domain.com'                 // if you have a custom domain
+  'http://localhost:5173',                      
+  'https://tiny-link-sable.vercel.app',
+  'https://your-custom-domain.com'              
 ];
 
 app.use(
@@ -21,8 +21,8 @@ app.use(
   })
 );
 
-const mongoose = require('mongoose'); // add this line
-const startTime = Date.now();         // add this line
+const mongoose = require('mongoose');
+const startTime = Date.now();       
 
 const connectDB = require('./db');
 const linksRouter = require('./routes/links');
@@ -35,7 +35,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
-// health
+
 app.get('/healthz', (req, res) => {
   const uptimeSeconds = Math.round(process.uptime());
 

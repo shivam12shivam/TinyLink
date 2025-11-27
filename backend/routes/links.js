@@ -1,12 +1,10 @@
-// routes/links.js
+
 const express = require('express');
 const router = express.Router();
 const Link = require('../models/Link');
 const { isValidCode, isValidUrl, generateCode } = require('../validators');
 
-// Create link
-// POST /api/links
-// body: { url: string, code?: string }
+
 router.post('/', async (req, res) => {
   try {
     const { url, code: customCode } = req.body || {};

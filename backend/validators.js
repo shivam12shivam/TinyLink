@@ -1,5 +1,3 @@
-// validators.js
-
 // Short code: 6–8 alphanumeric characters
 const CODE_REGEX = /^[A-Za-z0-9]{6,8}$/;
 

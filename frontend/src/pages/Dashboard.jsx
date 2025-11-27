@@ -1,4 +1,4 @@
-// src/pages/Dashboard.jsx
+
 import React, { useEffect, useState, useMemo } from 'react';
 import { listLinks, deleteLink } from '../api';
 import AddLinkForm from '../components/AddLinkForm';
@@ -8,7 +8,7 @@ export default function Dashboard() {
   const [links, setLinks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [search, setSearch] = useState(''); // 🔍 search term
+  const [search, setSearch] = useState(''); 
 
   async function loadLinks() {
     try {
@@ -38,7 +38,7 @@ export default function Dashboard() {
     }
   }
 
-  // 🔍 Filtered links (by code OR URL)
+
   const filteredLinks = useMemo(() => {
     const q = search.trim().toLowerCase();
     if (!q) return links;
