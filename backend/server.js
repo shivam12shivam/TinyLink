@@ -4,6 +4,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 
+const app = express();
 const allowedOrigins = [
   'http://localhost:5173',                      
   'https://tiny-link-sable.vercel.app',
@@ -28,7 +29,6 @@ const connectDB = require('./db');
 const linksRouter = require('./routes/links');
 const Link = require('./models/Link');
 
-const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(morgan('dev'));
